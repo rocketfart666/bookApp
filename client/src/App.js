@@ -3,10 +3,12 @@ import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-//Import Components
+// Import Components
 import NavigationBar from './components/NavigationBar'
-import BookTable from './views/BookTable'
 import { Container } from 'reactstrap';
+
+// Import Views
+import BookTable from './views/BookTable'
 
 function App() {
   return (

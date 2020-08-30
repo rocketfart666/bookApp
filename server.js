@@ -4,7 +4,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 // Connecting to MongoDB
-const Mongo_URI = "mongodb+srv://giresh:giresh@cluster0.i4kaz.mongodb.net/FirstApp?retryWrites=true&w=majority"
+const Mongo_URI = "mongodb+srv://avinash:krA5yQsgLr2KFcd@fobk.8u7ia.mongodb.net/EventRegistration?retryWrites=true&w=majority"
 mongoose.connect(Mongo_URI,{ useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
 .then(res => {
     // Creating the backend server on port

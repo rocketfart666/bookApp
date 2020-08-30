@@ -13,19 +13,18 @@ const BookTable = (props) => {
     },[]);
 
     const getBooksFromMongoDB = async () => {
-      const config = {
-        headers:{
-            "Content-Type": "application/json"
-        }
-      }
-      axios.get('/api/books', config)
+      axios.get('/api/books')
       .then(res => setBookDetails(res.data))
     }
 
-    console.log(bookDetails)
+    const updateBookDetails = newBook => {
+      setBookDetails([...bookDetails, newBook])
+    }
+
   return (
     <Fragment>
-      <AddBook />
+      <AddBook updateBookDetails={updateBookDetails}/>
+      <br />
       <Table size="sm">
         <thead>
           <tr>
@@ -35,7 +34,7 @@ const BookTable = (props) => {
           </tr>
         </thead>
         <tbody>
-          {bookDetails.map(({isbn, bookname, coverType}) => <tr>
+          {bookDetails.map(({isbn, bookname, coverType, _id}) => <tr key={_id}>
               <td>{isbn}</td>
               <td>{bookname}</td>
               <td>{coverType}</td>

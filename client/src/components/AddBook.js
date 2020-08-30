@@ -20,13 +20,9 @@ const AddBook = (props) => {
             isbn,
             coverType,
           }
-        const config = {
-            headers:{
-                "Content-Type": "application/json"
-            }
-        }
-        axios.post('/api/books', newBook ,config)
+        axios.post('/api/books', newBook)
         .then(res => {
+            props.updateBookDetails(res.data)
             setBookname('')
             setIsbn('')
             setCoverType('')
@@ -40,7 +36,6 @@ const AddBook = (props) => {
         return serErrorMessage("Missing Field")
     }
   }
-
 
   return (
     <div>
@@ -64,7 +59,7 @@ const AddBook = (props) => {
                     <Input type="number" name="isbn" placeholder="ISBN Number" defaultValue={isbn} onChange={e => setIsbn(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="coverType">Book Name</Label>
+                    <Label for="coverType">Book Type</Label>
                     <Input type="select" name="coverType" placeholder="Cover Type" defaultValue={coverType} onChange={e => setCoverType(e.target.value)}>
                         <option></option>
                         <option>Hardcover</option>
