@@ -1,0 +1,16 @@
+{
+  "name": "first-app",
+  "version": "1.0.0",
+  "description": "Very First App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Giresh",
+  "license": "MIT",
+  "dependencies": {
+    "config": "^3.3.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.2"
+  }
+}
